@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.app.di.module
 
-import androidx.compose.ui.graphics.Color
+import com.example.androiddevchallenge.app.ui.details.DetailViewModel
+import com.example.androiddevchallenge.app.ui.home.HomeViewModel
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
+val viewModelModule = module {
+    viewModel { HomeViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
+}

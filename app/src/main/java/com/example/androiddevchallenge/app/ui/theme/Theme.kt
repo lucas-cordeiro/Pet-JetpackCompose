@@ -13,26 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.app.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-    primary = purple200,
-    primaryVariant = purple700,
-    secondary = teal200
+    primary = DeepPurple400,
+    primaryVariant = DeepPurple200,
+    secondary = Red100,
+    onPrimary = Color.White,
+    onSecondary = Red300,
 )
 
 private val LightColorPalette = lightColors(
-    primary = purple500,
-    primaryVariant = purple700,
-    secondary = teal200
-
-        /* Other default colors to override
+    primary = DeepPurple600,
+    primaryVariant = DeepPurple200,
+    secondary = Red100,
+    onPrimary = Color.White,
+    onSecondary = Red300,
+    /* Other default colors to override
     background = Color.White,
     surface = Color.White,
     onPrimary = Color.White,
@@ -43,7 +47,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun PetTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
@@ -52,8 +56,8 @@ fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() (
 
     MaterialTheme(
         colors = colors,
-        typography = typography,
-        shapes = shapes,
+        typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }
